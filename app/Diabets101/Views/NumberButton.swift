@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct NumberButton: View {
-    let num string;
+    var num: String = "";
     var body: some View {
-        Button("1"){
-            print("1")
+        Button(num){
+            print(num)
         }
         .font(.custom("CooperBlack", size: 40))
         .foregroundColor(.white)
-        .frame(width: 70, height: 70)
+        .frame(width: 90, height: 90)
         .background(
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.darkGray1)
@@ -25,6 +25,6 @@ struct NumberButton: View {
 
 struct NumberButton_Previews: PreviewProvider {
     static var previews: some View {
-        NumberButton("1")
+        NumberButton(num: "1")
     }
 }
