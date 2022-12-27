@@ -70,8 +70,13 @@ struct AddRecordView: View {
     }
     
     func NumberButtonClicked(num: String){
-        print("got : \(num)")
-        $val += 1;
+        let n = Int(num)
+        if val < 700 {
+            val = val * 10 + (n ?? 0)
+        }
+        if (num == "!" || val > 700) {
+            val = 0
+        }
     }
 }
 
