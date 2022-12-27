@@ -18,6 +18,8 @@
 		235873BF295A61FF007FC500 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235873BE295A61FF007FC500 /* Extensions.swift */; };
 		235873C1295A700B007FC500 /* RecordsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235873C0295A700B007FC500 /* RecordsList.swift */; };
 		235873C7295A7F4D007FC500 /* CooperBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 235873C6295A7F4D007FC500 /* CooperBlack.ttf */; };
+		235D3296295B5823008121D7 /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D3295295B5823008121D7 /* AddRecordView.swift */; };
+		235D3298295B626F008121D7 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D3297295B626F008121D7 /* NumberButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		235873C0295A700B007FC500 /* RecordsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsList.swift; sourceTree = "<group>"; };
 		235873C5295A7F33007FC500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		235873C6295A7F4D007FC500 /* CooperBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CooperBlack.ttf; sourceTree = "<group>"; };
+		235D3295295B5823008121D7 /* AddRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordView.swift; sourceTree = "<group>"; };
+		235D3297295B626F008121D7 /* NumberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				23587392295A5F50007FC500 /* ContentView.swift */,
 				235873BB295A5FC1007FC500 /* RecordView.swift */,
 				235873C0295A700B007FC500 /* RecordsList.swift */,
+				235D3295295B5823008121D7 /* AddRecordView.swift */,
+				235D3297295B626F008121D7 /* NumberButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				23587393295A5F50007FC500 /* ContentView.swift in Sources */,
+				235D3298295B626F008121D7 /* NumberButton.swift in Sources */,
+				235D3296295B5823008121D7 /* AddRecordView.swift in Sources */,
 				235873BC295A5FC1007FC500 /* RecordView.swift in Sources */,
 				23587391295A5F50007FC500 /* Diabets101App.swift in Sources */,
 				235873C1295A700B007FC500 /* RecordsList.swift in Sources */,

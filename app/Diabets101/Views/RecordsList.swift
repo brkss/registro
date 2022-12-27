@@ -26,7 +26,7 @@ struct RecordsList: View {
                 RecordView()
             }
         }
-        .padding()
+        .padding(5)
         
     }
 }

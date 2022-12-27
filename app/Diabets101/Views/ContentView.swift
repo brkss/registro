@@ -6,13 +6,24 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
+    
     var body: some View {
         TabView{
            RecordsList()
-                .tabItem("records", systemImage: "list.bullet.indent")
+                .tabItem{
+                    Label(
+                        "records", systemImage: "list.bullet.indent"
+                    )
+                }
+            AddRecordView()
+                .tabItem{
+                    Label("add", systemImage: "plus.circle")
+                }
         }
+        .preferredColorScheme(.dark)
         /*
         VStack(alignment: .leading){
                     RecordsList()
