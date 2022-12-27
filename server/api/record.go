@@ -10,9 +10,9 @@ import (
 
 
 type CreateRecordRequest struct {
-	Unit 	string 	`json:"unit"`
-	Value 	int32 	`json:"value"`
-	Type	string 	`json:"type"` 	
+	Unit 	string 	`json:"unit" binding:"required"`
+	Value 	int32 	`json:"value" binding:"required"`
+	Type	string 	`json:"type" binding:"required"` 	
 }
 
 

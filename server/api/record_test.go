@@ -2,6 +2,7 @@ package api
 
 import (
 	"bytes"
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -72,7 +73,7 @@ func TestCreateRecordAPI(t *testing.T){
 			body: gin.H{
 				"type": record.Type,
 				"unit": record.Unit,
-				"Value": record.Value,
+				"value": record.Value,
 			},
 			buildStabs: func(store *mockdb.MockStore){
 				arg := db.CreateRecordParams{
@@ -81,13 +82,45 @@ func TestCreateRecordAPI(t *testing.T){
 					Value: record.Value,
 					Type: record.Type,
 				}
-				store.EXPECT().CreateRecord(gomock.Any(), EqCreateRecordParams(arg))
+				store.EXPECT().CreateRecord(gomock.Any(), EqCreateRecordParams(arg)).
+					Times(1).
+					Return(record, nil)
 			},
 			checkResponse: func(recorder *httptest.ResponseRecorder){
 				require.Equal(t, http.StatusOK, recorder.Code)
 			},
 		},
-
+		{
+			name: "BadRequest",
+			body: gin.H{
+				"type": record.Type,
+				"unit": record.Unit,
+			},
+			buildStabs: func(store *mockdb.MockStore){
+				store.EXPECT().CreateRecord(gomock.Any(), gomock.Any()).
+				Times(0).
+				Return(db.Record{}, nil)
+			},
+			checkResponse: func(recorder *httptest.ResponseRecorder){
+				require.Equal(t, http.StatusBadRequest, recorder.Code)
+			},
+		},
+		{
+			name: "InternalServerError",
+			body: gin.H{
+				"type": record.Type,
+				"unit": record.Unit,
+				"value": record.Value,
+			},
+			buildStabs: func(store *mockdb.MockStore){
+				store.EXPECT().CreateRecord(gomock.Any(), gomock.Any()).
+				Times(1).
+				Return(db.Record{}, sql.ErrConnDone)
+			},
+			checkResponse: func(recorder *httptest.ResponseRecorder){
+				require.Equal(t, http.StatusInternalServerError, recorder.Code)
+			},
+		},
 	}
 
 	for _, tc := range testCases {
@@ -114,4 +147,8 @@ func TestCreateRecordAPI(t *testing.T){
 		
 		})
 	}
+}
+
+func TestGetRecords(t *testing.T){
+
 }
