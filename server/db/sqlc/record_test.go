@@ -4,6 +4,7 @@ import (
 	"context"
 	"testing"
 
+	"github.com/brkss/registro/utils"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 )
@@ -12,9 +13,9 @@ func CreateRecord(t *testing.T) Record {
 	
 	arg := CreateRecordParams{
 		ID: uuid.New().String(),
-		Unit: "mg/Dl",
-		Value: 100,
-		Type: "BS",
+		Unit: utils.RandomString(5),
+		Value: int32(utils.RandomInt(40, 400)),
+		Type: utils.RandomType(),
 	}
 
 	record, err := testQueries.CreateRecord(context.Background(), arg)
