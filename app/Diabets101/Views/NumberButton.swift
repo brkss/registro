@@ -9,9 +9,10 @@ import SwiftUI
 
 struct NumberButton: View {
     var num: String = "";
+    var clicked: (String) -> Void;
     var body: some View {
         Button(num){
-            print(num)
+            clicked(num)
         }
         .font(.custom("CooperBlack", size: 40))
         .foregroundColor(.white)
@@ -22,9 +23,10 @@ struct NumberButton: View {
         )
     }
 }
-
+/*
 struct NumberButton_Previews: PreviewProvider {
     static var previews: some View {
-        NumberButton(num: "1")
+        //NumberButton(num: "1", clicked: nil)
     }
 }
+*/

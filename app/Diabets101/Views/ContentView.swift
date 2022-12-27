@@ -24,13 +24,6 @@ struct ContentView: View {
                 }
         }
         .preferredColorScheme(.dark)
-        /*
-        VStack(alignment: .leading){
-                    RecordsList()
-                }
-                .edgesIgnoringSafeArea(.bottom)
-                    .background(Color.black)
-    */
         }
 }
 

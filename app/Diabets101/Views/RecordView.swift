@@ -27,6 +27,7 @@ struct RecordView: View {
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.darkGray1)
         )
+        .padding(.top)
     }
 }
 
