@@ -42,7 +42,7 @@ func (q *Queries) CreateRecord(ctx context.Context, arg CreateRecordParams) (Rec
 
 const getRecords = `-- name: GetRecords :many
 SELECT id, unit, value, type, created_at FROM records
-ORDER BY created_at
+ORDER BY created_at DESC
 `
 
 func (q *Queries) GetRecords(ctx context.Context) ([]Record, error) {
