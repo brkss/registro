@@ -7,17 +7,17 @@
 
 import SwiftUI
 struct RecordView: View {
-    var value:  Int     = 0;
-    var unit:   String  = "";
-    var date:   Date    ;
+    var record: Record;
     @Binding public var showInfo: Bool;
     var body: some View {
         VStack(alignment: .leading){
-            Text("\(value) \(unit)")
+            
+            Text("\(record.value) \(record.unit)")
                 .font(.custom("CooperBlack", size: 32))
                 .bold()
                 .foregroundColor(.white)
-            Text("\(FormatDate(date: date))")
+            
+            Text("\(FormatDate(date: record.created_at))")
                 .font(.subheadline)
                 .opacity(0.5)
                 .foregroundColor(.white)
@@ -31,9 +31,7 @@ struct RecordView: View {
                 .fill(Color.darkGray1)
         )
         .padding(.top)
-        .onTapGesture {
-            showInfo.toggle()
-        }
+        
     }
         
     

@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView{
-           RecordsList()
+            RecordsList()
                 .tabItem{
                     Label(
                         "records", systemImage: "list.bullet.indent"

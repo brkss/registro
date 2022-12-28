@@ -10,6 +10,7 @@ import SwiftUI
 struct RecordsList: View {
     @State private var records = [Record]();
     @State private var showInfo = false;
+    @State private var selectedRecord = "";
     var body: some View {
         VStack(alignment: .leading) {
             Text("My Records")
@@ -19,11 +20,13 @@ struct RecordsList: View {
             ScrollView(showsIndicators: false){
                 ForEach(records, id: \.id) { record in
                     RecordView(
-                        value: record.value,
-                        unit: record.unit,
-                        date: record.created_at,
+                        record: record,
                         showInfo: $showInfo
                     )
+                    .onTapGesture {
+                        selectedRecord = record.id
+                        showInfo.toggle()
+                    }
                 }
             }
             
@@ -34,10 +37,7 @@ struct RecordsList: View {
         }
         .sheet(isPresented: $showInfo){
             RecordInfo(
-                type: records[0].type,
-                date: records[0].created_at,
-                value: records[0].value,
-                unit: records[0].unit
+                record: records.first(where: {$0.id == selectedRecord}) ?? records[0]
             )
                 .presentationDetents([.height(UIScreen.main.bounds.height / 1.5)])
         }
@@ -69,9 +69,9 @@ struct RecordsList: View {
         }
     }
 }
-
+/*
 struct RecordsList_Previews: PreviewProvider {
     static var previews: some View {
         RecordsList()
     }
-}
+}*/
