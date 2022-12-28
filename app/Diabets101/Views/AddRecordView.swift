@@ -94,7 +94,6 @@ struct AddRecordView: View {
         ]
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-        print("req body : \(request.httpBody)")
         // Making the request !
         let task = URLSession.shared.dataTask(with: request) { data, _, errr in
             guard let data = data, errr == nil else {
@@ -102,13 +101,12 @@ struct AddRecordView: View {
             }
             do{
                 let response = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print("SUCCESS: \(response)")
+                val = 0;
             }catch{
                 print("")
             }
         }
         task.resume()
-        print("current value : \(body)")
     }
 }
 

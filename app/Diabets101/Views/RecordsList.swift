@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RecordsList: View {
     @State private var records = [Record]();
+    @State private var showInfo = false;
     var body: some View {
         VStack(alignment: .leading) {
             Text("My Records")
@@ -17,7 +18,12 @@ struct RecordsList: View {
                 .font(.custom("CooperBlack", size: 42))
             ScrollView(showsIndicators: false){
                 ForEach(records, id: \.id) { record in
-                    RecordView(value: record.value, unit: record.unit, date: record.created_at)
+                    RecordView(
+                        value: record.value,
+                        unit: record.unit,
+                        date: record.created_at,
+                        showInfo: $showInfo
+                    )
                 }
             }
             
@@ -26,6 +32,11 @@ struct RecordsList: View {
         .task{
             await fetchRecords()
         }
+        .sheet(isPresented: $showInfo){
+            Text("Hello World!")
+                .presentationDetents([.height(UIScreen.main.bounds.height / 1.5)])
+        }
+        
         
     }
     

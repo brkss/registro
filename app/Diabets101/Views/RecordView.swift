@@ -10,6 +10,7 @@ struct RecordView: View {
     var value:  Int     = 0;
     var unit:   String  = "";
     var date:   Date    ;
+    @Binding public var showInfo: Bool;
     var body: some View {
         VStack(alignment: .leading){
             Text("\(value) \(unit)")
@@ -30,6 +31,9 @@ struct RecordView: View {
                 .fill(Color.darkGray1)
         )
         .padding(.top)
+        .onTapGesture {
+            showInfo.toggle()
+        }
     }
         
     func FormatDate(date: Date) -> String {
@@ -41,9 +45,10 @@ struct RecordView: View {
         return result1;
     }
 }
-
+/*
 struct RecordView_Previews: PreviewProvider {
     static var previews: some View {
         RecordView(value: 100, unit: "mg/dl", date: Date.now)
     }
 }
+*/
