@@ -33,7 +33,12 @@ struct RecordsList: View {
             await fetchRecords()
         }
         .sheet(isPresented: $showInfo){
-            Text("Hello World!")
+            RecordInfo(
+                type: records[0].type,
+                date: records[0].created_at,
+                value: records[0].value,
+                unit: records[0].unit
+            )
                 .presentationDetents([.height(UIScreen.main.bounds.height / 1.5)])
         }
         

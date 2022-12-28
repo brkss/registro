@@ -36,14 +36,7 @@ struct RecordView: View {
         }
     }
         
-    func FormatDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy hh:mm"
-        //formatter.timeZone = TimeZone(abbreviation: "UTC+1")
-        let result1 = formatter.string(from: date)
-        print("format : \(result1)")
-        return result1;
-    }
+    
 }
 /*
 struct RecordView_Previews: PreviewProvider {
