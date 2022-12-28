@@ -9,8 +9,9 @@ import Foundation
 
 
 struct Record: Codable {
-    let id:     String;
-    let type:   String;
-    let unit:   String;
-    let value:  Int;
+    let id:         String;
+    let type:       String;
+    let unit:       String;
+    let value:      Int;
+    let created_at: Date;
 }

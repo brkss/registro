@@ -17,7 +17,7 @@ struct RecordsList: View {
                 .font(.custom("CooperBlack", size: 42))
             ScrollView(showsIndicators: false){
                 ForEach(records, id: \.id) { record in
-                    RecordView(value: record.value, unit: record.unit)
+                    RecordView(value: record.value, unit: record.unit, date: record.created_at)
                 }
             }
             
@@ -37,8 +37,14 @@ struct RecordsList: View {
         
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
-            if let decodedResponse = try? JSONDecoder().decode([Record].self, from: data){
+            // decode date from json
+            let decoder = JSONDecoder()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            if let decodedResponse = try? decoder.decode([Record].self, from: data){
                 records = decodedResponse;
+                print("decodedResponse : \(decodedResponse)")
             }else{
                 print("couldnt decode the data")
             }
