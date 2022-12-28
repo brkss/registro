@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
-
 struct RecordView: View {
+    var value:  Int     = 0;
+    var unit:   String  = "";
     var body: some View {
         VStack(alignment: .leading){
-            Text("233 mg/dL")
+            Text("\(value) \(unit)")
                 .font(.custom("CooperBlack", size: 32))
                 .bold()
                 .foregroundColor(.white)
@@ -18,7 +19,6 @@ struct RecordView: View {
                 .font(.subheadline)
                 .opacity(0.5)
                 .foregroundColor(.white)
-                
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -33,6 +33,6 @@ struct RecordView: View {
 
 struct RecordView_Previews: PreviewProvider {
     static var previews: some View {
-        RecordView()
+        RecordView(value: 100, unit: "mg/dl")
     }
 }

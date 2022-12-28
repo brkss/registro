@@ -148,7 +148,3 @@ func TestCreateRecordAPI(t *testing.T){
 		})
 	}
 }
-
-func TestGetRecords(t *testing.T){
-
-}
