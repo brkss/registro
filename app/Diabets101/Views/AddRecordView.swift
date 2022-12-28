@@ -50,7 +50,7 @@ struct AddRecordView: View {
             }
             .padding(.top)
             Button("SAVE"){
-                print("SAVE")
+                CreateRecord()
             }.foregroundColor(.white)
                 .font(.custom("CooperBlack", size: 30))
                 .frame(maxWidth: .infinity)
@@ -77,6 +77,38 @@ struct AddRecordView: View {
         if (num == "!" || val > 700) {
             val = 0
         }
+    }
+    
+    func CreateRecord(){
+        guard let url = URL(string: "http://localhost:4000/record") else {
+            print("couldnt create url !")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body: [String: AnyHashable] = [
+            "value": val,
+            "type": "BS",
+            "unit": "mg/DL"
+        ]
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        print("req body : \(request.httpBody)")
+        // Making the request !
+        let task = URLSession.shared.dataTask(with: request) { data, _, errr in
+            guard let data = data, errr == nil else {
+                return;
+            }
+            do{
+                let response = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                print("SUCCESS: \(response)")
+            }catch{
+                print("")
+            }
+        }
+        task.resume()
+        print("current value : \(body)")
     }
 }
 
