@@ -100,8 +100,16 @@ struct AddRecordView: View {
                 return;
             }
             do{
-                let response = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                _ = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                if val >= 180 || val <= 80 {
+                    // anormal blood suga schedule notification in 
+                    ScheduleNotification(body: "it been 45 minutes since your last record", time: 45 * 60)
+                }else if val < 180 && val > 80 {
+                    // normal blood sugar schedule notification in 2 hours
+                    ScheduleNotification(body: "it been 2 hours since your last record", time: 2 * 60 * 60)
+                }
                 val = 0;
+                    
             }catch{
                 print("")
             }

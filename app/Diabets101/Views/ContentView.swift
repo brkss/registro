@@ -18,8 +18,6 @@ struct ContentView: View {
                 print(error.localizedDescription)
             }
         }
-        
-        ScheduleNotification(body: "it been 2 hours since your last record", time: 5)
     }
     var body: some View {
         TabView{
