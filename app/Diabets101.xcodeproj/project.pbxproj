@@ -23,6 +23,7 @@
 		2363C1AA295CB03000EDD99E /* JSONDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363C1A9295CB03000EDD99E /* JSONDecoders.swift */; };
 		2363C1AC295CD60E00EDD99E /* RecordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363C1AB295CD60E00EDD99E /* RecordInfo.swift */; };
 		2363C1AE295CD73B00EDD99E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363C1AD295CD73B00EDD99E /* Date.swift */; };
+		23E530DD295DED7000733E64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E530DC295DED7000733E64 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		2363C1A9295CB03000EDD99E /* JSONDecoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoders.swift; sourceTree = "<group>"; };
 		2363C1AB295CD60E00EDD99E /* RecordInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInfo.swift; sourceTree = "<group>"; };
 		2363C1AD295CD73B00EDD99E /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		23E530DC295DED7000733E64 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				235873BE295A61FF007FC500 /* Extensions.swift */,
 				2363C1A9295CB03000EDD99E /* JSONDecoders.swift */,
 				2363C1AD295CD73B00EDD99E /* Date.swift */,
+				23E530DC295DED7000733E64 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2363C1AA295CB03000EDD99E /* JSONDecoders.swift in Sources */,
+				23E530DD295DED7000733E64 /* Constants.swift in Sources */,
 				2363C1AE295CD73B00EDD99E /* Date.swift in Sources */,
 				23587393295A5F50007FC500 /* ContentView.swift in Sources */,
 				235D3298295B626F008121D7 /* NumberButton.swift in Sources */,

@@ -48,7 +48,7 @@ struct RecordsList: View {
     }
     
     func fetchRecords() async {
-        guard let url = URL(string: "http://localhost:4000/records") else{
+        guard let url = URL(string: Constants.URL + "/records") else{
             print("couldnt create url !")
             return
         }

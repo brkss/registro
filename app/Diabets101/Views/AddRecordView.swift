@@ -80,7 +80,7 @@ struct AddRecordView: View {
     }
     
     func CreateRecord(){
-        guard let url = URL(string: "http://localhost:4000/record") else {
+        guard let url = URL(string: Constants.URL + "/record") else {
             print("couldnt create url !")
             return
         }
