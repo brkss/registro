@@ -15,7 +15,7 @@ struct ContentView: View {
             RecordsList()
                 .tabItem{
                     Label(
-                        "records", systemImage: "list.bullet.indent"
+                        "records", systemImage: "eye.circle.fill"
                     )
                 }
             AddRecordView()

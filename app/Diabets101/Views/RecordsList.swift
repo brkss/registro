@@ -13,10 +13,12 @@ struct RecordsList: View {
     @State private var selectedRecord = "";
     var body: some View {
         VStack(alignment: .leading) {
-            Text("My Records")
-                .foregroundColor(.white)
-                .bold()
-                .font(.custom("CooperBlack", size: 42))
+            VStack(alignment: .center){
+                Text("My Records")
+                    .foregroundColor(.white)
+                    .bold()
+                    .font(.custom("CooperBlack", size: 35))
+            }.frame(maxWidth: .infinity)
             ScrollView(showsIndicators: false){
                 ForEach(records, id: \.id) { record in
                     RecordView(
@@ -29,8 +31,8 @@ struct RecordsList: View {
                     }
                 }
             }
-            
         }
+        
         .padding(5)
         .task{
             await fetchRecords()

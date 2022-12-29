@@ -16,6 +16,7 @@ struct RecordView: View {
                 .font(.custom("CooperBlack", size: 32))
                 .bold()
                 .foregroundColor(.white)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 1, trailing: 0))
             
             Text("\(FormatDate(date: record.created_at))")
                 .font(.subheadline)
