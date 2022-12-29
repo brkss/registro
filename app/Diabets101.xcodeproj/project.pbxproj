@@ -24,6 +24,7 @@
 		2363C1AC295CD60E00EDD99E /* RecordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363C1AB295CD60E00EDD99E /* RecordInfo.swift */; };
 		2363C1AE295CD73B00EDD99E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363C1AD295CD73B00EDD99E /* Date.swift */; };
 		23E530DD295DED7000733E64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E530DC295DED7000733E64 /* Constants.swift */; };
+		23E530DF295E0AD500733E64 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E530DE295E0AD500733E64 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		2363C1AB295CD60E00EDD99E /* RecordInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInfo.swift; sourceTree = "<group>"; };
 		2363C1AD295CD73B00EDD99E /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		23E530DC295DED7000733E64 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		23E530DE295E0AD500733E64 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				2363C1A9295CB03000EDD99E /* JSONDecoders.swift */,
 				2363C1AD295CD73B00EDD99E /* Date.swift */,
 				23E530DC295DED7000733E64 /* Constants.swift */,
+				23E530DE295E0AD500733E64 /* Notification.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				235D3296295B5823008121D7 /* AddRecordView.swift in Sources */,
 				235873BC295A5FC1007FC500 /* RecordView.swift in Sources */,
 				23587391295A5F50007FC500 /* Diabets101App.swift in Sources */,
+				23E530DF295E0AD500733E64 /* Notification.swift in Sources */,
 				2363C1AC295CD60E00EDD99E /* RecordInfo.swift in Sources */,
 				235873C1295A700B007FC500 /* RecordsList.swift in Sources */,
 				235873BF295A61FF007FC500 /* Extensions.swift in Sources */,

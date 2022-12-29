@@ -19,14 +19,7 @@ struct ContentView: View {
             }
         }
         
-        let content = UNMutableNotificationContent()
-        content.title = "Measure Your Blood Sugar 🩸"
-        content.subtitle = "it been 2 hours since your last record"
-        content.sound = UNNotificationSound.default
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let req = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(req)
+        ScheduleNotification(body: "it been 2 hours since your last record", time: 5)
     }
     var body: some View {
         TabView{
