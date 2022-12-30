@@ -8,7 +8,13 @@
 import Foundation
 import UserNotifications
 
+func CancelPReviousNotifications(){
+    let center = UNUserNotificationCenter.current()
+    center.removeAllPendingNotificationRequests()
+}
+
 func ScheduleNotification(body: String, time: TimeInterval) {
+    CancelPReviousNotifications()
     let content = UNMutableNotificationContent()
     content.title = "Measure Your Blood Sugar 🩸"
     content.subtitle = body

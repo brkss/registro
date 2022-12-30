@@ -9,8 +9,14 @@ import SwiftUI
 
 struct AddRecordView: View {
     @State private var val: Int = 0;
+    @State private var msg: String = "";
     var body: some View {
         VStack(alignment: .leading) {
+            if(msg != ""){
+                Text(msg)
+                    .foregroundColor(.green)
+                    .bold()
+            }
             Spacer()
             VStack(alignment: .center){
                 Text("\(val) mg/DL")
@@ -103,9 +109,11 @@ struct AddRecordView: View {
                 _ = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 if val >= 180 || val <= 80 {
                     // anormal blood suga schedule notification in 
+                    msg = "Your next will be in 45 min, take care of it!"
                     ScheduleNotification(body: "it been 45 minutes since your last record", time: 45 * 60)
                 }else if val < 180 && val > 80 {
                     // normal blood sugar schedule notification in 2 hours
+                    msg = "All good your next will be in 2 hours from now"
                     ScheduleNotification(body: "it been 2 hours since your last record", time: 2 * 60 * 60)
                 }
                 val = 0;
