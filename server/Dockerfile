@@ -16,12 +16,12 @@ FROM arm64v8/alpine:3.17
 
 WORKDIR /app
 
-#COPY wait-for .
+COPY wait-for .
 COPY --from=builder /app/main .
 COPY --from=builder /app/migrate .
 COPY db/migration ./migration
 COPY .env .
-
+COPY start.sh .
 
 EXPOSE 4000
 CMD ["/app/main"]
