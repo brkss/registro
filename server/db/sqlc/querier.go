@@ -10,6 +10,7 @@ import (
 
 type Querier interface {
 	CreateRecord(ctx context.Context, arg CreateRecordParams) (Record, error)
+	DeleteQuery(ctx context.Context, id string) error
 	GetRecords(ctx context.Context) ([]Record, error)
 }
 

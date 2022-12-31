@@ -15,7 +15,9 @@ type CreateRecordRequest struct {
 	Type	string 	`json:"type" binding:"required"` 	
 }
 
-
+type DeleteRecordRequest struct {
+	ID		string	`json:"id" binding:"required"`
+}
 
 func (server *Server)CreateRecorAPI(ctx *gin.Context){
 
@@ -56,4 +58,8 @@ func (server *Server)GetRecordsAPI(ctx *gin.Context){
 
 }
 
+func (server *Server)DeleteRecordAPI(ctx *gin.Context){
 
+
+
+}

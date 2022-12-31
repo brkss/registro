@@ -16,6 +16,7 @@ func NewServer(store db.Store) *Server{
 
 	router.POST("/record", server.CreateRecorAPI)
 	router.GET("/records", server.GetRecordsAPI)
+	router.DELETE("/record", server.DeleteRecordAPI)
 
 	server.router = router;
 	return server;

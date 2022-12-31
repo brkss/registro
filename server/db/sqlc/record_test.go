@@ -50,3 +50,10 @@ func TestGetRecords(t *testing.T){
 	}
 
 }
+
+func TestDeleteRecord(t *testing.T){
+	record := CreateRecord(t)
+	
+	err := testQueries.DeleteQuery(context.Background(), record.ID)
+	require.NoError(t, err)
+}

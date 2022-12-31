@@ -8,5 +8,6 @@ VALUES ($1, $2, $3, $4) RETURNING *;
 SELECT * FROM records
 ORDER BY created_at DESC;
 
-
-
+-- name: DeleteQuery :exec
+DELETE FROM records
+WHERE id = $1;

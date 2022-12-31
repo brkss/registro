@@ -50,6 +50,20 @@ func (mr *MockStoreMockRecorder) CreateRecord(arg0, arg1 interface{}) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateRecord", reflect.TypeOf((*MockStore)(nil).CreateRecord), arg0, arg1)
 }
 
+// DeleteQuery mocks base method.
+func (m *MockStore) DeleteQuery(arg0 context.Context, arg1 string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteQuery", arg0, arg1)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteQuery indicates an expected call of DeleteQuery.
+func (mr *MockStoreMockRecorder) DeleteQuery(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteQuery", reflect.TypeOf((*MockStore)(nil).DeleteQuery), arg0, arg1)
+}
+
 // GetRecords mocks base method.
 func (m *MockStore) GetRecords(arg0 context.Context) ([]db.Record, error) {
 	m.ctrl.T.Helper()

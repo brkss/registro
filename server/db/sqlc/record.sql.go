@@ -40,6 +40,16 @@ func (q *Queries) CreateRecord(ctx context.Context, arg CreateRecordParams) (Rec
 	return i, err
 }
 
+const deleteQuery = `-- name: DeleteQuery :exec
+DELETE FROM records
+WHERE id = $1
+`
+
+func (q *Queries) DeleteQuery(ctx context.Context, id string) error {
+	_, err := q.db.ExecContext(ctx, deleteQuery, id)
+	return err
+}
+
 const getRecords = `-- name: GetRecords :many
 SELECT id, unit, value, type, created_at FROM records
 ORDER BY created_at DESC
