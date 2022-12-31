@@ -61,5 +61,19 @@ func (server *Server)GetRecordsAPI(ctx *gin.Context){
 func (server *Server)DeleteRecordAPI(ctx *gin.Context){
 
 
+	var req DeleteRecordRequest
+	err := ctx.ShouldBindJSON(&req)
 
+	if err != nil {
+		ctx.JSON(http.StatusBadRequest, errResponse(err))
+		return
+	}
+	
+	err = server.store.DeleteQuery(ctx, req.ID)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError,  errResponse(err))
+		return
+	}
+	
+	ctx.JSON(http.StatusOK, gin.H{})
 }
