@@ -57,6 +57,7 @@ struct AddRecordView: View {
             .padding(.top)
             Button("SAVE"){
                 CreateRecord()
+                val = 0;
             }.foregroundColor(.white)
                 .font(.custom("CooperBlack", size: 30))
                 .frame(maxWidth: .infinity)
@@ -86,44 +87,45 @@ struct AddRecordView: View {
     }
     
     func CreateRecord(){
-        guard let url = URL(string: Constants.URL + "/record") else {
-            print("couldnt create url !")
-            return
-        }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let body: [String: AnyHashable] = [
-            "value": val,
-            "type": "BS",
-            "unit": "mg/DL"
-        ]
-        
-        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-        // Making the request !
-        let task = URLSession.shared.dataTask(with: request) { data, _, errr in
-            guard let data = data, errr == nil else {
-                return;
+            guard let url = URL(string: Constants.URL + "/record") else {
+                print("couldnt create url !")
+                return
             }
-            do{
-                _ = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                if val >= 180 || val <= 80 {
-                    // anormal blood suga schedule notification in 
-                    msg = "Your next will be in 45 min, take care of it!"
-                    ScheduleNotification(body: "it been 45 minutes since your last record", time: 45 * 60)
-                }else if val < 180 && val > 80 {
-                    // normal blood sugar schedule notification in 2 hours
-                    msg = "All good your next will be in 2 hours from now"
-                    ScheduleNotification(body: "it been 2 hours since your last record", time: 2 * 60 * 60)
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let body: [String: AnyHashable] = [
+                "value": val,
+                "type": "BS",
+                "unit": "mg/DL"
+            ]
+            
+            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+            // Making the request !
+            let task = URLSession.shared.dataTask(with: request) { data, _, errr in
+                guard let data = data, errr == nil else {
+                    return;
                 }
-                val = 0;
-                    
-            }catch{
-                print("")
+                do{
+                    _ = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    if val >= 180 || val <= 80 {
+                        // anormal blood suga schedule notification in
+                        msg = "Your next will be in 45 min, take care of it!"
+                        ScheduleNotification(body: "it been 45 minutes since your last record", time: 45 * 60)
+                    }else if val < 180 && val > 80 {
+                        // normal blood sugar schedule notification in 2 hours
+                        msg = "All good your next will be in 2 hours from now"
+                        ScheduleNotification(body: "it been 2 hours since your last record", time: 2 * 60 * 60)
+                    }
+                        
+                }catch{
+                    print("")
+                }
             }
+            task.resume()
         }
-        task.resume()
-    }
+
+    
 }
 
 struct AddRecordView_Previews: PreviewProvider {

@@ -9,5 +9,6 @@ import Foundation
 
 
 struct Constants {
-    static let URL: String = "http://127.0.0.1:4000"
+    //static let URL: String = "https://registro.vanillefraise.me"
+    static let URL: String = "http://localhost:4000"
 }

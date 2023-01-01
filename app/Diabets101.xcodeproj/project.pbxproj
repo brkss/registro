@@ -23,6 +23,7 @@
 		2363C1AA295CB03000EDD99E /* JSONDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363C1A9295CB03000EDD99E /* JSONDecoders.swift */; };
 		2363C1AC295CD60E00EDD99E /* RecordInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363C1AB295CD60E00EDD99E /* RecordInfo.swift */; };
 		2363C1AE295CD73B00EDD99E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363C1AD295CD73B00EDD99E /* Date.swift */; };
+		239B88DB2961F1FF00A51323 /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B88DA2961F1FF00A51323 /* APIRequests.swift */; };
 		23E530DD295DED7000733E64 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E530DC295DED7000733E64 /* Constants.swift */; };
 		23E530DF295E0AD500733E64 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E530DE295E0AD500733E64 /* Notification.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2358738D295A5F50007FC500 /* Diabets101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diabets101.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2358738D295A5F50007FC500 /* Registro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Registro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23587390295A5F50007FC500 /* Diabets101App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diabets101App.swift; sourceTree = "<group>"; };
 		23587392295A5F50007FC500 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23587394295A5F51007FC500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		2363C1A9295CB03000EDD99E /* JSONDecoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoders.swift; sourceTree = "<group>"; };
 		2363C1AB295CD60E00EDD99E /* RecordInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordInfo.swift; sourceTree = "<group>"; };
 		2363C1AD295CD73B00EDD99E /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		239B88DA2961F1FF00A51323 /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		23E530DC295DED7000733E64 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		23E530DE295E0AD500733E64 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +109,7 @@
 		2358738E295A5F50007FC500 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2358738D295A5F50007FC500 /* Diabets101.app */,
+				2358738D295A5F50007FC500 /* Registro.app */,
 				2358739D295A5F52007FC500 /* Diabets101Tests.xctest */,
 				235873A7295A5F52007FC500 /* Diabets101UITests.xctest */,
 			);
@@ -174,6 +176,7 @@
 				2363C1AD295CD73B00EDD99E /* Date.swift */,
 				23E530DC295DED7000733E64 /* Constants.swift */,
 				23E530DE295E0AD500733E64 /* Notification.swift */,
+				239B88DA2961F1FF00A51323 /* APIRequests.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -203,7 +206,7 @@
 			);
 			name = Diabets101;
 			productName = Diabets101;
-			productReference = 2358738D295A5F50007FC500 /* Diabets101.app */;
+			productReference = 2358738D295A5F50007FC500 /* Registro.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2358739C295A5F52007FC500 /* Diabets101Tests */ = {
@@ -320,6 +323,7 @@
 				2363C1AA295CB03000EDD99E /* JSONDecoders.swift in Sources */,
 				23E530DD295DED7000733E64 /* Constants.swift in Sources */,
 				2363C1AE295CD73B00EDD99E /* Date.swift in Sources */,
+				239B88DB2961F1FF00A51323 /* APIRequests.swift in Sources */,
 				23587393295A5F50007FC500 /* ContentView.swift in Sources */,
 				235D3298295B626F008121D7 /* NumberButton.swift in Sources */,
 				235D3296295B5823008121D7 /* AddRecordView.swift in Sources */,
@@ -503,7 +507,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkasse.wesplit.Diabets101;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Registro;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -534,7 +538,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkasse.wesplit.Diabets101;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Registro;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
